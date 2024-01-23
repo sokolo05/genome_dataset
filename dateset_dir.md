@@ -9,7 +9,7 @@
 ## 1.PacBio测序
 ### 1.PacBio_CCS_15kb（HG002）
   ```
-  /ifs1/laicx/02.human-dataset/HG002_NA24385_son/PacBio_CCS_15kb/HG002/fastq_file
+  /ifs1/laicx/02.human-dataset/HG002_NA24385_son/PacBio_CCS_15kb/HG002/fastq_file/HG002.PacBio_CCS_15.fastq
   ---------------------------------------------------------------------
   m54238_180901_011437.Q20.fastq
   m54238_180902_013549.Q20.fastq
@@ -25,7 +25,8 @@
   HG001_NA12878
   HG002_NA24385_son
   ---------------------------------------------------------------------
-   
+  /ifs1/laicx/02.human-dataset/HG002_NA24385_son/PacBio_MtSinai_NIST/HG002/HG002.MtSinai_NIST.fastq
+  ---------------------------------------------------------------------
   HG003_NA24149_father
   HG004_NA24143_mother
   HG005_NA24631_son
