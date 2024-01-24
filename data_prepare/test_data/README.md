@@ -22,7 +22,7 @@
 #### UCSC_Ultralong_OxfordNanopore_Promethion(self-alignment-minimap2-hs37d5)
 - 名称：`GM24385_all.bam`
 - 源目录：`/ifs1/laicx/02.human-dataset/HG002_NA24385_son/UCSC_Ultralong_OxfordNanopore_Promethion/bam.HG002.ont.minimap2`
-- read数：
+- read数：3415435、9352800、9495477 —> 合计：22263712
 - 终目录：
 #### UCSC_Ultralong_OxfordNanopore_Promethion(alignment-minimap2-hs37d5)
 - 名称：`HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam`
