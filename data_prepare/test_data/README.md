@@ -4,14 +4,14 @@
 #### svsearcher
 - 名称：`test.sort.bam`
 - 源目录：`/home/laicx/study/01.benchmark/02.test_data/01.svsearcher_test/test_data`
-- read数：223    samtools view -c input.bam
+- read数：223    `samtools view -c input.bam`
 - 终目录：
 - 
 ## 2. PacBio
 #### PacBio_CCS_15kb
 - 名称：`HG002.Sequel.15kb.pbmm2.hs37d5.whatshap.haplotag.RTG.10x.trio.bam`
 - 源目录：`/ifs1/laicx/02.human-dataset/HG002_NA24385_son/PacBio_CCS_15kb/HG002/bam_file`
-- read数：6880343    samtools view -c input.bam
+- read数：6880343    `samtools view -c input.bam`
 - 终目录：
 #### PacBio_MtSinai_NIST
 - 名称：`HG002_PacBio_GRCh37.bam`
