@@ -16,7 +16,7 @@
 #### PacBio_MtSinai_NIST
 - 名称：`HG002_PacBio_GRCh37.bam`
 - 源目录：`/ifs1/laicx/02.human-dataset/HG002_NA24385_son/PacBio_MtSinai_NIST/bam_file`
-- read数：
+- read数：26623206    `samtools view -c input.bam`
 - 终目录：  
 ## 3. ONT
 #### UCSC_Ultralong_OxfordNanopore_Promethion(self-alignment-minimap2-hs37d5)
@@ -27,5 +27,5 @@
 #### UCSC_Ultralong_OxfordNanopore_Promethion(alignment-minimap2-hs37d5)
 - 名称：`HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam`
 - 源目录：`/ifs1/laicx/02.human-dataset/HG002_NA24385_son/UCSC_Ultralong_OxfordNanopore_Promethion/bam_file`
-- read数：
+- read数：22299428    `samtools view -c input.bam`
 - 终目录：
