@@ -1,3 +1,8 @@
+## 路径地址
+```
+/home/laicx/study/01.benchmark/01.dataset/02.human-dataset/HG002_NA24385_son/PacBio_MtSinai_NIST/HG002
+```
+
 ### 1. 新建 unzipfile.sh 文件
 ```
 vim unzipfile.sh
