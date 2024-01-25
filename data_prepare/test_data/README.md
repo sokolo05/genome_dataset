@@ -1,4 +1,4 @@
-# test：
+# test
 截取的部分bam文件
 ## 1. test-file
 #### svsearcher
