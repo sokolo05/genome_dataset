@@ -34,7 +34,8 @@ conda install minimap2==2.17 pbsv==2.2.0 svim==1.2.0 sniffles==1.0.11 cuteSV==1.
 
 ## Alignment
 ```
-/home/laicx/study/01.benchmark/03.benchmark/01.cutesv_benchmark/alns
+cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns
+# /home/laicx/study/01.benchmark/03.benchmark/01.cutesv_benchmark/alns
 ```
 
 ## Run pbsv
