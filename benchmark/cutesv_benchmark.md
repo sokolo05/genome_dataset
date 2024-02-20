@@ -34,18 +34,18 @@ conda install minimap2==2.17 pbsv==2.2.0 svim==1.2.0 sniffles==1.0.11 cuteSV==1.
 
 ## Alignment
 ```
-cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns
+cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns/GM24385_all.bam
 # /home/laicx/study/01.benchmark/03.benchmark/01.cutesv_benchmark/alns
 ```
 
 ## Run pbsv
-1. Add MD tag to BAM
+1. 借助pbs执行pbsv
    ```
-   samtools calmd -bS alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam ref/human_hs37d5.fasta > alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam
+   qsub 01.pbsv.hg002.pbs
    ```
 2. Discover SV signatures for each alignment, can be done in parallel
    ```
-   pbsv discover alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam tools/pbsv/hg2_ont.svsig.gz --tandem-repeats ref/human_hs37d5.trf.bed
+   pbsv discover alns/GM24385_all.bam tools/pbsv/hg2_ont.svsig.gz --tandem-repeats ref/human_hs37d5.trf.bed
    ```
 3. Call and polish SVs
    ```
@@ -54,11 +54,15 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns
    tabix tools/pbsv/hg2_ont.pbsv.vcf.gz
    ```
 ## Run svim
-1. Run svim
+1. 借助pbs执行svim
    ```
-   svim alignment tools/svim alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam ref/human_hs37d5.fasta --min_sv_size 30
+   qsub 02.svim.hg002.pbs
    ```
-2. Prepare for truvari
+2. Run svim
+   ```
+   svim alignment tools/svim alns/GM24385_all.bam ref/human_hs37d5.fasta --min_sv_size 30
+   ```
+3. Prepare for truvari
    ```
    cat tools/svim/final_results.vcf \
         | sed 's/INS:NOVEL/INS/g' \
@@ -71,11 +75,15 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns
    tabix tools/svim/hg2_ont.svim.vcf.gz
    ```
 ## Run sniffles
- 1. Run sniffles
+ 1. 借助pbs执行sniffles
+   ```
+   qsub 03.sniffles.hg002.pbs
+   ```
+ 2. Run sniffles
     ```
-    sniffles -s 10 -l 30 -m alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam -v tools/sniffles/hg2_ont.sniffles.vcf --genotype
+    sniffles -s 10 -l 30 -m alns/GM24385_all.bam -v tools/sniffles/hg2_ont.sniffles.vcf --genotype
     ```
- 2. Prepare for truvari
+ 3. Prepare for truvari
     ```
     cat <(cat tools/sniffles/hg2_ont.sniffles.vcf | grep "^#") \
         <(cat tools/sniffles/hg2_ont.sniffles.vcf | grep -vE "^#" | \
@@ -84,11 +92,15 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns
     tabix tools/sniffles/hg2_ont.sniffles.vcf.gz
     ```
 ## Run cuteSV
- 1. Run cuteSV
+ 1. 借助pbs执行cuteSV
+   ```
+   qsub 04.cuteSV.hg002.pbs
+   ```
+ 2. Run cuteSV
     ```
-    cuteSV alns/HG002_GRCh37_ONT-UL_UCSC_20200508.phased.bam tools/cuteSV/hg2_ont.cuteSV.vcf ./ -s 10 -l 30
+    cuteSV alns/GM24385_all.bam tools/cuteSV/hg2_ont.cuteSV.vcf ./ -s 10 -l 30
     ```
- 2. Prepare for truvari
+ 3. Prepare for truvari
     ```
     grep -v 'INV\|DUP\|BND' tools/cuteSV/hg2_ont.cuteSV.vcf | bgzip -c > tools/cuteSV/hg2_ont.cuteSV.vcf.gz
     tabix tools/cuteSV/hg2_ont.cuteSV.vcf.gz
