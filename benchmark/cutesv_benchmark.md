@@ -76,9 +76,9 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns/GM2438
    ```
 ## Run sniffles
  1. 借助pbs执行sniffles
-   ```
-   qsub 03.sniffles.hg002.pbs
-   ```
+    ```
+    qsub 03.sniffles.hg002.pbs
+    ```
  2. Run sniffles
     ```
     sniffles -s 10 -l 30 -m alns/GM24385_all.bam -v tools/sniffles/hg2_ont.sniffles.vcf --genotype
@@ -93,9 +93,9 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns/GM2438
     ```
 ## Run cuteSV
  1. 借助pbs执行cuteSV
-   ```
-   qsub 04.cuteSV.hg002.pbs
-   ```
+    ```
+    qsub 04.cuteSV.hg002.pbs
+    ```
  2. Run cuteSV
     ```
     cuteSV alns/GM24385_all.bam tools/cuteSV/hg2_ont.cuteSV.vcf ./ -s 10 -l 30
