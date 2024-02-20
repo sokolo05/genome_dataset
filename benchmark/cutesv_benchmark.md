@@ -4,8 +4,8 @@
 
 ## 软件版本
 ```
-conda create --name sv python=3
-source activate sv
+conda create --name sv-benchmark3.6 python=3.6
+source activate sv-benchmark3.6
 conda install minimap2==2.17 pbsv==2.2.0 svim==1.2.0 sniffles==1.0.11 cuteSV==1.0.3 truvari==1.2 samtools bgzip tabix
 ```
 
