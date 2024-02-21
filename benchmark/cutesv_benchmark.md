@@ -109,17 +109,17 @@ cd /home/laicx/study/01.benchmark/03.benchmark/01.HG002_GRCh37_ONT-2/alns/GM2438
   1. Compare to ground truth
      ```
      truvari -f ref/human_hs37d5.fasta -b giab/HG002_SVs_Tier1_v0.6.vcf.gz\
-              --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench-pbsv --passonly\
-              --giabreport -r 1000 -p 0.00 -c tools/pbsv/hg2.pbsv.vcf.gz
+        --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench/bench-pbsv --passonly\
+        --giabreport -r 1000 -p 0.00 -c tools/pbsv/hg2_ont.pbsv.vcf.gz
      truvari -f ref/human_hs37d5.fasta -b giab/HG002_SVs_Tier1_v0.6.vcf.gz\
-              --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench-svim --passonly\
-              --giabreport -r 1000 -p 0.00 -c tools/svim/hg2.svim.vcf.gz
+        --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench/bench-svim --passonly\
+        --giabreport -r 1000 -p 0.00 -c tools/svim/hg2_ont.svim.vcf.gz
      truvari -f ref/human_hs37d5.fasta -b giab/HG002_SVs_Tier1_v0.6.vcf.gz\
-              --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench-sniffles --passonly\
-              --giabreport -r 1000 -p 0.00 -c tools/sniffles/hg2.sniffles.vcf.gz
+        --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench/bench-sniffles --passonly\
+        --giabreport -r 1000 -p 0.00 -c tools/sniffles/hg2_ont.sniffles.vcf.gz
      truvari -f ref/human_hs37d5.fasta -b giab/HG002_SVs_Tier1_v0.6.vcf.gz\
-              --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench-cuteSV --passonly\
-              --giabreport -r 1000 -p 0.00 -c tools/cuteSV/hg2_ont.cuteSV.vcf.gz
+        --includebed giab/HG002_SVs_Tier1_v0.6.bed -o bench/bench-cuteSV --passonly\
+        --giabreport -r 1000 -p 0.00 -c tools/cuteSV/hg2_ont.cuteSV.vcf.gz
      ```
   2. Parse results
      ```
